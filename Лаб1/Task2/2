@@ -1,9 +1,8 @@
-def count(x)
-	k=0
+def composition(x)
+	k=1
 	for i in 1..x
-		if((x%10)>3 and (x%10)%2!=0)
-			k+=1
-			
+		if((x%10)%5!=0)
+			k*=(x%10)
 		end
 		x=x/10
 	end
@@ -11,4 +10,4 @@ def count(x)
 end
 
 a = ARGV[0]
-print("Count = ", count(a.to_i), "\n")
+print("Composition = ", composition(a.to_i), "\n")
