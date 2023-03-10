@@ -1,0 +1,28 @@
+def arrsum(x,y,z)
+	sum=0
+	y3=[]
+	for i in 0...x.size
+		if(x[i]>=y && x[i]<=z)
+			y3.push(x[i])
+		end
+	end
+	return y3
+end
+
+def sum(x)
+	sum=0
+	for i in 0...x.size
+		sum+=x[i]
+	end
+	return sum
+end
+
+
+a = ARGV[0]
+file = File.new(a,"r:UTF-8")
+array = Array.new(file.readline.split.map(&:to_i))
+b = ARGV[1]
+c = ARGV[2]
+d = arrsum(array,b.to_i,c.to_i)
+print("Array: ", array, "\n")
+print("Sum of elements that include in a interval: ", sum(d), "\n")
