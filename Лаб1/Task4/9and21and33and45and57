@@ -48,9 +48,11 @@ if (b==3)
 	print(polog(array), "\n")
 end
 if(b==4)
+	print("Введите первую границу: ")
 	c=STDIN.gets.chomp.to_i
+	print("Введите вторую границу: ")
 	d=STDIN.gets.chomp.to_i
-	print(sum(array,c,d), "\n")
+	print("Результат: ",sum(array,c,d), "\n")
 end
 if (b==5)
 	print(count(array), "\n")
