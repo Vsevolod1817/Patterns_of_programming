@@ -1,4 +1,4 @@
-require_relative 'LAB2.rb'
+require_relative 'Student.rb'
 
 student1 = Student.new(surname = 'Епифанцев',
                        name = 'Всеволод',
