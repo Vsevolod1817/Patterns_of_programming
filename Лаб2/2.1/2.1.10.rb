@@ -4,14 +4,14 @@ class Student
 
 
   def initialize(surname:, name:, father_name:, id: nil, phone: nil, telegram: nil, email: nil, git: nil)
-    @id = id
-    @surname=surname
-    @name=name
-    @father_name=father_name
-    @phone = phone
-    @telegram = telegram
-    @email = email
-    @git = git
+    self.id = id
+    self.surname=surname
+    self.name=name
+    self.father_name=father_name
+    self.phone = phone
+    self.telegram = telegram
+    self.email = email
+    self.git = git
     validate
   end
 
