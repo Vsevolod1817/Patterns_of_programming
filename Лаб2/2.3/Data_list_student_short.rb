@@ -1,34 +1,30 @@
-class Data_list
+require_relative 'Data_list'
+require_relative 'Data_table'
 
-  private_class_method :new
-  attr_reader :list
+class Data_list_student_short < Data_list
+  public_class_method :new
 
-  def initialize(list)
-    self.list = list
-    self.select_items = []
+  attr_accessor :data
+
+  def initialize(data)
+    super
   end
 
-  #Выделить элемент по номеру
-  def select(number)
-    select_items.append(number)
-  end
-
-  #получаем массив выделеных элементов
-  def get_selected
-    return [] if select_items.empty?
-    selected_id_list = []
-    select_items.each do |num|
-      selected_id_list.append(list[num].id)
-    end
-    selected_id_list
-  end
-
-  #Этот метод будтет реализован в наследнике
   def get_names
+    %w[surname_initials git contact]
   end
 
-  #Этот метод будтет реализован в наследнике
-  def get_data
+  def get_information(obj)
+    [obj.surname_initials, obj.git, obj.contact]
+  end
+
+  private
+  def format_data(data)
+    super(data).map { |datum| datum.join(', ') }
+  end
+
+  def format_names(names)
+    super(names).map { |name| name.capitalize }
   end
 
 end
