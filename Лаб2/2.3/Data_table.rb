@@ -1,27 +1,29 @@
 class Data_table
 
-  attr_reader :row_number, :column_number
+  attr_accessor :table
 
   def initialize(table)
-    @table = table
-    @row_number = table.size
-    @column_number = max_size_column
+    self.table = table
   end
 
-  #получить элемент по номеру столбца и строки
-  def get_item(row,col)
-    return nil if row>=@row_number||col>=@column_number
-    table[row][col]
+  def num_columns
+    self.table[0].length
+  end
+  def num_rows
+    self.table.length
   end
 
-  private
-  attr_accessor :table
-  attr_writer :row_number, :column_number
-
-  #максимальный размер столбца
-  def max_size_column
-    max_size = 0
-    table.each{|elem| max_size=elem.size if elem.size>max_size}
-    max_size
+  def set_data(new_data)
+    table = new_data.map.with_index do |row, i|
+      row.map.with_index { |element, j| element.nil? ? get_element(i, j) : element }
+    end
   end
+
+  def printer
+    self.table.each {|item| p item[0].to_s + ' ' + item[1].to_s + ' '}
+  end
+  def get_element(row, col)
+    self.table[row][col]
+  end
+
 end
