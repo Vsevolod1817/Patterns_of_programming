@@ -6,15 +6,15 @@ class AbstractClass
   end
 
   def step_1
-    raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"
+    raise NotImplementedError, " has not implemented method "
   end
 
   def step_2
-    raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"
+    raise NotImplementedError, " has not implemented method "
   end
 
   def step_3
-    raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"
+    raise NotImplementedError, "has not implemented method "
   end
 end
 
